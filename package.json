@@ -1,0 +1,25 @@
+{
+  "name": "songpro",
+  "displayName": "SongPro",
+  "description": "SongPro format support for VS Code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.107.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "songpro",
+      "aliases": ["SongPro", "songpro"],
+      "extensions": ["songpro"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "songpro",
+      "scopeName": ".source.songpro",
+      "path": "./syntaxes/songpro.tmLanguage.json"
+    }]
+  }
+}
