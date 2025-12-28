@@ -3,10 +3,33 @@
 	"name": "SongPro",
 	"patterns": [
 		{
+			"include": "#directives"
+		},
+		{
 			"include": "#chords"
 		}
 	],
 	"repository": {
+		"directives": {
+			"patterns": [{
+				"name": "meta.directive.songpro",
+				"match": "^([@!])([^=]+)(=)(.*)$",
+				"captures": {
+					"1": {
+						"name": "punctuation.definition.directive.songpro"
+					},
+					"2": {
+						"name": "entity.name.tag.directive.attribute.songpro"
+					},
+					"3": {
+						"name": "keyword.operator.assignment.songpro"
+					},
+					"4": {
+						"name": "string.unquoted.directive.value.songpro"
+					}
+				}
+			}]
+		},
 		"chords": {
 			"patterns": [{
 				"name": "entity.name.tag.chord.songpro",
