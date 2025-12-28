@@ -3,23 +3,57 @@
   "displayName": "SongPro",
   "description": "SongPro format support for VS Code",
   "version": "0.0.1",
+  "publisher": "songpro",
   "engines": {
     "vscode": "^1.107.0"
   },
   "categories": [
     "Programming Languages"
   ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/node": "20.x",
+    "@types/vscode": "^1.107.0",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.11.0",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5"
+  },
   "contributes": {
-    "languages": [{
-      "id": "songpro",
-      "aliases": ["SongPro", "songpro"],
-      "extensions": ["songpro"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "songpro",
-      "scopeName": ".source.songpro",
-      "path": "./syntaxes/songpro.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "songpro",
+        "aliases": [
+          "SongPro",
+          "songpro"
+        ],
+        "extensions": [
+          "songpro"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "songpro",
+        "scopeName": ".source.songpro",
+        "path": "./syntaxes/songpro.tmLanguage.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "@types/lodash": "^4.17.21",
+    "lodash": "^4.17.21"
   }
 }
