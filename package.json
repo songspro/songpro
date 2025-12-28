@@ -41,6 +41,34 @@
         "title": "SongPro: Transpose -1"
       }
     ],
+    "keybindings": [
+      {
+        "command": "songpro.transposeUp",
+        "key": "alt+=",
+        "mac": "alt+=",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "songpro.transposeDown",
+        "key": "alt+-",
+        "mac": "alt+-",
+        "when": "editorTextFocus"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "songpro.transposeUp",
+          "group": "songpro@1",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "songpro.transposeDown",
+          "group": "songpro@2",
+          "when": "editorHasSelection"
+        }
+      ]
+    },
     "languages": [
       {
         "id": "songpro",
