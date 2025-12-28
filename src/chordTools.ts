@@ -176,9 +176,9 @@ export function transposeChordNumberNumber(chord: string, d: number): string {
     return `${transposeChordNumberNumber(mainChord, d)}/${transposeChordNumberNumber(bassChord, d)}`;
   }
 
-  // Find which number tone the chord starts with
-  for (let i = 0; i < TONE_NUMBER_NAMES.length; i++) {
-    const numTone = TONE_NUMBER_NAMES[i];
+  // Find which number tone the chord starts with (check longest first)
+  const sortedNumberNames = _.sortBy(TONE_NUMBER_NAMES.map((name, index) => ({ name, index })), x => -x.name.length);
+  for (const { name: numTone, index: i } of sortedNumberNames) {
     if (chord.startsWith(numTone)) {
       const newIndex = (i + 5 * 12 + d) % 12;
       const chordType = chord.substring(numTone.length);
