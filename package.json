@@ -2,8 +2,8 @@
   "name": "songpro",
   "displayName": "SongPro",
   "description": "SongPro format support for VS Code",
-  "version": "0.0.1",
-  "publisher": "songpro",
+  "version": "0.0.2",
+  "publisher": "janproch",
   "repository": {
     "type": "git",
     "url": "https://github.com/songspro/songpro"
